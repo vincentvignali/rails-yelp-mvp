@@ -1,0 +1,29 @@
+<h1 class="mb-3 text-white">Restaurant</h1>
+<ol class="list-group border border-5">
+        <li class="list-group-item text-white bg-transparent border border-5">
+          <i class="fas fa-utensils text-white mr-2"></i>
+          <strong>Name : </strong><%= @restaurant.name %>
+        </li>
+        <li class="list-group-item text-white bg-transparent border border-5">
+          <i class="fas fa-map-marker-alt text-white mr-2"></i>
+          <strong>Address : </strong><%= @restaurant.address %>
+        </li>
+        <li class="list-group-item text-white bg-transparent border border-5">
+          <i class="fas fa-phone-volume text-white mr-2"></i>
+          <strong>Phone number : </strong><%= @restaurant.phone_number %>
+        </li>
+        <li class="list-group-item text-white bg-transparent border border-5">
+          <i class="fas fa-list text-white mr-2"></i>
+          <strong>Category : </strong><%= @restaurant.category %>
+        </li>
+        <li class="list-group-item text-white bg-transparent border border-5">
+            <ul class="list-group">
+              <% @restaurant.reviews.each do |review| %>
+                <li class="list-group-item font-italic bg-transparent border border-0"><strong>Note</strong> <%= review.rating %> | <strong>Comment :</strong> <%= review.content %></li>
+              <% end %>
+            </ul>
+        </li>
+        </li>
+
+</ol>
+<%= link_to "Write a review", new_restaurant_review_path(@restaurant), class:"btn btn-primary mt-2 rounded-5" %>

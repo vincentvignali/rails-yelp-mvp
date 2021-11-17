@@ -1,0 +1,14 @@
+<h1 class="mb-3 text-white">Restaurants</h1>
+<ol class="list-group border border-5">
+  <% n = 0 %>
+   <% @restaurants.each do |restaurant|%>
+        <li class="list-group-item d-flex align-items-center bg-transparent border border-5">
+          <i class="fas fa-utensils text-white mr-4"></i>
+          <div class="text-white mr-2">
+          <%= n = n + 1 %>
+          -
+          </div>
+          <%= link_to restaurant.name, restaurant_path(restaurant), class:"text-white"%>
+        </li>
+    <% end %>
+</ol>

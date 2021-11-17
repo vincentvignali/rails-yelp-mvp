@@ -7,9 +7,24 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag asset_path('utensils-solid.svg') %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body style="background-color:#af99ff;background-image: radial-gradient(at 96% 92%, hsla(9,63%,70%,1) 0, transparent 55%), radial-gradient(at 54% 50%, hsla(15,78%,61%,1) 0, transparent 48%), radial-gradient(at 52% 74%, hsla(353,64%,60%,1) 0, transparent 42%), radial-gradient(at 68% 48%, hsla(95,73%,61%,1) 0, transparent 49%), radial-gradient(at 74% 79%, hsla(164,90%,61%,1) 0, transparent 59%), radial-gradient(at 76% 31%, hsla(54,84%,63%,1) 0, transparent 53%), radial-gradient(at 93% 1%, hsla(329,80%,66%,1) 0, transparent 57%); background-size: cover">
+    <div class="bg-primary">
+      <div class="container ">
+          <ul class="nav nav-pills">
+          <li class="border border-3 rounded m-2">
+            <%= link_to "Add a new Restaurant", new_restaurant_path, class:"btn btn-primary rounded-5" %>
+          </li>
+          <li class="border border-3 rounded m-2">
+            <%= link_to "Restaurants list", restaurants_path, class:"btn btn-primary rounded-5" %>
+          </li>
+        </ul>
+      </div>
+    </div>
+      <div class="container mt-5 rounded-5 mb-5">
+        <%= yield %>
+      </div>
   </body>
 </html>
